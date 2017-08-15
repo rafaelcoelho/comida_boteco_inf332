@@ -1,0 +1,8 @@
+This project is used to perform the GAE (google app engine) tests in order to delivery the laboratory task on 12/08/17.
+
+The following steps shall be done to run the project:
+  1. Import the project on Eclipse IDE;
+  2. Install the plugin and SDK for GAE; and
+  3. Connect your google account in order to make the deploy on google cloud.
+  
+Further more information can be get on http://engsoft.ic.unicamp.br/moodle/file.php/154/moddata/forum/731/8256/Implementacao_de_APIs_usando_o_GAE.pdf
