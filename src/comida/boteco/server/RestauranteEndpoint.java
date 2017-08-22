@@ -73,7 +73,7 @@ public class RestauranteEndpoint {
 	 * @return The entity with primary key id.
 	 */
 	@ApiMethod(name = "getRestaurante")
-	public Restaurante getRestaurante(@Named("id") Long id) {
+	public Restaurante getRestaurante(@Named("id") String id) {
 		EntityManager mgr = getEntityManager();
 		Restaurante restaurante = null;
 		try {
@@ -135,7 +135,7 @@ public class RestauranteEndpoint {
 	 * @param id the primary key of the entity to be deleted.
 	 */
 	@ApiMethod(name = "removeRestaurante")
-	public void removeRestaurante(@Named("id") Long id) {
+	public void removeRestaurante(@Named("id") String id) {
 		EntityManager mgr = getEntityManager();
 		try {
 			Restaurante restaurante = mgr.find(Restaurante.class, id);

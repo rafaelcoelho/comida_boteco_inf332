@@ -73,7 +73,7 @@ public class PratoEndpoint {
 	 * @return The entity with primary key id.
 	 */
 	@ApiMethod(name = "getPrato")
-	public Prato getPrato(@Named("id") Long id) {
+	public Prato getPrato(@Named("id") String id) {
 		EntityManager mgr = getEntityManager();
 		Prato prato = null;
 		try {
@@ -135,7 +135,7 @@ public class PratoEndpoint {
 	 * @param id the primary key of the entity to be deleted.
 	 */
 	@ApiMethod(name = "removePrato")
-	public void removePrato(@Named("id") Long id) {
+	public void removePrato(@Named("id") String id) {
 		EntityManager mgr = getEntityManager();
 		try {
 			Prato prato = mgr.find(Prato.class, id);

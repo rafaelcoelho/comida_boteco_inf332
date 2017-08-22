@@ -28,22 +28,6 @@
   "ownerName" : "boteco.comida",
   "packagePath" : "server",
   "methods" : {
-    "pratoendpoint.updatePrato" : {
-      "path" : "prato",
-      "httpMethod" : "PUT",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "comida.boteco.server.PratoEndpoint.updatePrato",
-      "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
-      },
-      "response" : {
-        "body" : "autoTemplate(backendResponse)"
-      }
-    },
     "pratoendpoint.getPrato" : {
       "path" : "prato/{id}",
       "httpMethod" : "GET",
@@ -55,7 +39,7 @@
       "request" : {
         "parameters" : {
           "id" : {
-            "type" : "int64",
+            "type" : "string",
             "required" : true
           }
         },
@@ -90,25 +74,20 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "pratoendpoint.removePrato" : {
-      "path" : "prato/{id}",
-      "httpMethod" : "DELETE",
+    "pratoendpoint.updatePrato" : {
+      "path" : "prato",
+      "httpMethod" : "PUT",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "comida.boteco.server.PratoEndpoint.removePrato",
+      "rosyMethod" : "comida.boteco.server.PratoEndpoint.updatePrato",
       "request" : {
-        "parameters" : {
-          "id" : {
-            "type" : "int64",
-            "required" : true
-          }
-        },
-        "body" : "empty"
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
       },
       "response" : {
-        "body" : "empty"
+        "body" : "autoTemplate(backendResponse)"
       }
     },
     "pratoendpoint.insertPrato" : {
@@ -126,6 +105,27 @@
       "response" : {
         "body" : "autoTemplate(backendResponse)"
       }
+    },
+    "pratoendpoint.removePrato" : {
+      "path" : "prato/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "comida.boteco.server.PratoEndpoint.removePrato",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
     }
   },
   "descriptor" : {
@@ -135,7 +135,7 @@
         "type" : "object",
         "properties" : {
           "id" : {
-            "type" : "integer"
+            "type" : "string"
           },
           "nome" : {
             "type" : "string"
@@ -165,14 +165,6 @@
       }
     },
     "methods" : {
-      "comida.boteco.server.PratoEndpoint.updatePrato" : {
-        "request" : {
-          "$ref" : "Prato"
-        },
-        "response" : {
-          "$ref" : "Prato"
-        }
-      },
       "comida.boteco.server.PratoEndpoint.getPrato" : {
         "response" : {
           "$ref" : "Prato"
@@ -183,7 +175,13 @@
           "$ref" : "CollectionResponse_Prato"
         }
       },
-      "comida.boteco.server.PratoEndpoint.removePrato" : {
+      "comida.boteco.server.PratoEndpoint.updatePrato" : {
+        "request" : {
+          "$ref" : "Prato"
+        },
+        "response" : {
+          "$ref" : "Prato"
+        }
       },
       "comida.boteco.server.PratoEndpoint.insertPrato" : {
         "request" : {
@@ -192,6 +190,8 @@
         "response" : {
           "$ref" : "Prato"
         }
+      },
+      "comida.boteco.server.PratoEndpoint.removePrato" : {
       }
     }
   }

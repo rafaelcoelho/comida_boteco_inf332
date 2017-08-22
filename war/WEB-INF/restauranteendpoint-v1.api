@@ -28,27 +28,6 @@
   "ownerName" : "boteco.comida",
   "packagePath" : "server",
   "methods" : {
-    "restauranteendpoint.removeRestaurante" : {
-      "path" : "restaurante/{id}",
-      "httpMethod" : "DELETE",
-      "authLevel" : "NONE",
-      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
-      "audiences" : [ ],
-      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "comida.boteco.server.RestauranteEndpoint.removeRestaurante",
-      "request" : {
-        "parameters" : {
-          "id" : {
-            "type" : "int64",
-            "required" : true
-          }
-        },
-        "body" : "empty"
-      },
-      "response" : {
-        "body" : "empty"
-      }
-    },
     "restauranteendpoint.getRestaurante" : {
       "path" : "restaurante/{id}",
       "httpMethod" : "GET",
@@ -60,7 +39,7 @@
       "request" : {
         "parameters" : {
           "id" : {
-            "type" : "int64",
+            "type" : "string",
             "required" : true
           }
         },
@@ -95,6 +74,22 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
+    "restauranteendpoint.insertRestaurante" : {
+      "path" : "restaurante",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "comida.boteco.server.RestauranteEndpoint.insertRestaurante",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
     "restauranteendpoint.updateRestaurante" : {
       "path" : "restaurante",
       "httpMethod" : "PUT",
@@ -111,20 +106,25 @@
         "body" : "autoTemplate(backendResponse)"
       }
     },
-    "restauranteendpoint.insertRestaurante" : {
-      "path" : "restaurante",
-      "httpMethod" : "POST",
+    "restauranteendpoint.removeRestaurante" : {
+      "path" : "restaurante/{id}",
+      "httpMethod" : "DELETE",
       "authLevel" : "NONE",
       "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
       "audiences" : [ ],
       "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
-      "rosyMethod" : "comida.boteco.server.RestauranteEndpoint.insertRestaurante",
+      "rosyMethod" : "comida.boteco.server.RestauranteEndpoint.removeRestaurante",
       "request" : {
-        "body" : "autoTemplate(backendRequest)",
-        "bodyName" : "resource"
+        "parameters" : {
+          "id" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
       },
       "response" : {
-        "body" : "autoTemplate(backendResponse)"
+        "body" : "empty"
       }
     }
   },
@@ -135,7 +135,7 @@
         "type" : "object",
         "properties" : {
           "id" : {
-            "type" : "integer"
+            "type" : "string"
           },
           "name" : {
             "type" : "string"
@@ -165,8 +165,6 @@
       }
     },
     "methods" : {
-      "comida.boteco.server.RestauranteEndpoint.removeRestaurante" : {
-      },
       "comida.boteco.server.RestauranteEndpoint.getRestaurante" : {
         "response" : {
           "$ref" : "Restaurante"
@@ -177,6 +175,14 @@
           "$ref" : "CollectionResponse_Restaurante"
         }
       },
+      "comida.boteco.server.RestauranteEndpoint.insertRestaurante" : {
+        "request" : {
+          "$ref" : "Restaurante"
+        },
+        "response" : {
+          "$ref" : "Restaurante"
+        }
+      },
       "comida.boteco.server.RestauranteEndpoint.updateRestaurante" : {
         "request" : {
           "$ref" : "Restaurante"
@@ -185,13 +191,7 @@
           "$ref" : "Restaurante"
         }
       },
-      "comida.boteco.server.RestauranteEndpoint.insertRestaurante" : {
-        "request" : {
-          "$ref" : "Restaurante"
-        },
-        "response" : {
-          "$ref" : "Restaurante"
-        }
+      "comida.boteco.server.RestauranteEndpoint.removeRestaurante" : {
       }
     }
   }
