@@ -1,0 +1,8 @@
+Rafael Augusto da Silva Coelho - 40.738.354-2
+
+API:
+Name: comida_rafael_coelho
+URL: http://api-demov3.sensedia.com/rscoelho/comidaboteco/v1/
+
+How to run:
+Use the Postman collection and first run the "Get services" request in order to set the endpoint address.

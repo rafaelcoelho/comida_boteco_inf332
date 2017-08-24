@@ -1,0 +1,405 @@
+{
+	"id": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+	"name": "GAE API Suite",
+	"description": "",
+	"order": [
+		"2f1eee7e-1396-daba-ca27-eec052129bc4"
+	],
+	"folders": [
+		{
+			"name": "Dishes",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"order": [
+				"bd0c7b35-12cf-2121-1b3b-2b8cc466b233",
+				"714143db-8fe8-acf0-3544-c9cde5610c01",
+				"7e27fd02-2fc0-dd2e-8850-bba28f40f793",
+				"92bdab82-c09f-efbf-b4d6-96119bb0f587",
+				"a5206408-5c25-3139-c2be-fafc804ccf7e"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "ce8f1072-d9b2-8f4b-25af-8f7f6925fae2"
+		},
+		{
+			"name": "Restaurants",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"order": [
+				"59c79d9b-ab11-d611-7dde-6c995b362fa6",
+				"3e305e81-3347-618d-e5ed-7c45430a750f",
+				"951dd7b3-e2aa-ae8b-0787-010964cfd106",
+				"71a8b4cb-2dd2-dc02-164f-b587128276a7",
+				"de44b2c6-9c88-6194-b2a7-a752fe04739d"
+			],
+			"owner": 0,
+			"folders_order": [],
+			"id": "d1650300-1574-02f0-50b4-d2253dcc9414"
+		}
+	],
+	"folders_order": [
+		"ce8f1072-d9b2-8f4b-25af-8f7f6925fae2",
+		"d1650300-1574-02f0-50b4-d2253dcc9414"
+	],
+	"timestamp": 1503613425878,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "2f1eee7e-1396-daba-ca27-eec052129bc4",
+			"headers": "",
+			"headerData": [],
+			"url": "https://inf332-176902.appspot.com/_ah/api/discovery/v1/apis/",
+			"queryParams": [],
+			"preRequestScript": "//postman.setEnvironmentVariable(\"location\", \"https://inf332-176902.appspot.com\");\npostman.setEnvironmentVariable(\"location\", \"http://api-demov3.sensedia.com/rscoelho/comidaboteco/v1\");",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503613515019,
+			"name": "Get services",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": []
+		},
+		{
+			"id": "3e305e81-3347-618d-e5ed-7c45430a750f",
+			"headers": "client_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/restaurantes/{{rest_id}}",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503613957297,
+			"name": "Get restaurant",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": []
+		},
+		{
+			"id": "59c79d9b-ab11-d611-7dde-6c995b362fa6",
+			"headers": "Content-Type: application/json\nclient_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/restaurantes",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "let success = responseCode.code === 200;\ntests[\"Creating restaurant...\"] = success;\n\nif (success) {\n    let rs = JSON.parse(responseBody);\n    postman.setEnvironmentVariable(\"rest_id\", rs.id);\n}",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503613932014,
+			"name": "Post restaurant",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": [],
+			"rawModeData": "{\n  \"endereco\": \"First avenue, 510, NY\",\n  \"id\": \"120\",\n  \"name\": \"Outback\",\n  \"telefone\": 4443323\n}"
+		},
+		{
+			"id": "714143db-8fe8-acf0-3544-c9cde5610c01",
+			"headers": "Content-Type: application/json\nclient_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/pratos/{{dishe_id}}",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503613802386,
+			"name": "Get dishe",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": [],
+			"rawModeData": "{\n  \"descricao\": \"Spaghetti with tomato sauce\",\n  \"id\": \"32\",\n  \"nome\": \"Red pasta\",\n  \"preco\": 30\n}"
+		},
+		{
+			"id": "71a8b4cb-2dd2-dc02-164f-b587128276a7",
+			"headers": "client_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/restaurantes/{{rest_id}}",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503614184329,
+			"name": "Delete restaurant",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": []
+		},
+		{
+			"id": "7e27fd02-2fc0-dd2e-8850-bba28f40f793",
+			"headers": "Content-Type: application/json\nclient_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/pratos",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "let success = responseCode.code === 200;\ntests[\"Creating dishe...\"] = success;\n\nif (success) {\n    let rs = JSON.parse(responseBody);\n    postman.setEnvironmentVariable(\"dishe_id\", rs.id);\n}",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503613825611,
+			"name": "Update dishe",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": [],
+			"rawModeData": "{\n  \"descricao\": \"Spaghetti with tomato sauce\",\n  \"id\": {{dishe_id}},\n  \"nome\": \"Red pasta - edit 01\",\n  \"preco\": 30\n}"
+		},
+		{
+			"id": "92bdab82-c09f-efbf-b4d6-96119bb0f587",
+			"headers": "Content-Type: application/json\nclient_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/pratos/{{dishe_id}}",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "DELETE",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503613861387,
+			"name": "Delete dishe",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": [],
+			"rawModeData": "{\n  \"descricao\": \"Spaghetti with tomato sauce\",\n  \"id\": {{dishe_id}},\n  \"nome\": \"Red pasta\",\n  \"preco\": 30\n}"
+		},
+		{
+			"id": "951dd7b3-e2aa-ae8b-0787-010964cfd106",
+			"headers": "Content-Type: application/json\nclient_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/restaurantes",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503613971181,
+			"name": "Update restaurant",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": [],
+			"rawModeData": "{\n  \"endereco\": \"First avenue, 123, NY\",\n  \"id\": {{rest_id}},\n  \"name\": \"NX-Japan\",\n  \"telefone\": 5553323\n}"
+		},
+		{
+			"id": "a5206408-5c25-3139-c2be-fafc804ccf7e",
+			"headers": "Content-Type: application/json\nclient_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/pratos",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503613880963,
+			"name": "Get list of dishes",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": [],
+			"rawModeData": "{\n  \"descricao\": \"Spaghetti with tomato sauce\",\n  \"id\": \"32\",\n  \"nome\": \"Red pasta\",\n  \"preco\": 30\n}"
+		},
+		{
+			"id": "bd0c7b35-12cf-2121-1b3b-2b8cc466b233",
+			"headers": "Content-Type: application/json\nclient_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/pratos",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "let success = responseCode.code === 200;\ntests[\"Creating dishe...\"] = success;\n\nif (success) {\n    let rs = JSON.parse(responseBody);\n    postman.setEnvironmentVariable(\"dishe_id\", rs.id);\n}",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503613705802,
+			"name": "Post dishe",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": [],
+			"rawModeData": "{\n  \"descricao\": \"Spaghetti with tomato sauce\",\n  \"id\": \"4\",\n  \"nome\": \"Red pasta\",\n  \"preco\": 30\n}"
+		},
+		{
+			"id": "de44b2c6-9c88-6194-b2a7-a752fe04739d",
+			"headers": "client_id: 1f66b157-6af2-3d62-9dce-cfecb7dbdfa1\n",
+			"headerData": [
+				{
+					"key": "client_id",
+					"value": "1f66b157-6af2-3d62-9dce-cfecb7dbdfa1",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{location}}/restaurantes",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1503614191323,
+			"name": "Get list of restaurants",
+			"description": "",
+			"collectionId": "ac3a8c10-4d97-da9a-cceb-4be0938c2ff7",
+			"responses": []
+		}
+	]
+}
